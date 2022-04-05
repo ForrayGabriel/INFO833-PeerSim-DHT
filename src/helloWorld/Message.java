@@ -14,6 +14,9 @@ public class Message {
     public static final int NEW_PREC = 7;
     public static final int SHOW = 8;
     public static final int LEAVE = 9;
+    public static final int SEND = 10;
+    
+
 
 
     private int type;
