@@ -134,10 +134,7 @@ public class Noeud implements EDProtocol {
             if (this.suiv_id!=0) {
                 Node dest = Network.get(this.suiv_id);
                 this.send(new Message(msg.getType(),"Hello from " + this.nodeId), dest);
-            } /*else {
-                this.number++;
-                this.send(new Message(Message.ACTIVATE,"Hello"), Network.get(this.number));
-            }*/
+            }
         }
         if (msg.getType() == Message.LEAVE){        
             System.out.println(ANSI_RED  + "I'm leaving");    
