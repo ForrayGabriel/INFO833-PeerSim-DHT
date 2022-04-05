@@ -47,6 +47,12 @@ The node parse the message and get the id and uid of the node trying to join the
 The node finally have its place. It update its next and previous nodes ids and uids Then it send a **NEW_SUIV** and a **NEW_PREC** message to its new neighbors.  
 * For a **NEW_SUIV** or **NEW_PREC** message :  
 The node update the info about its new neighbour.
+* For a **SHOW** message :  
+The node passes the message to the next one, unless it's 0. This is for showing the whole DHT in order.  
+* For a **LEAVE** message :  
+The node send **NEW_SUIV** and a **NEW_PREC** message to its new neighbors with their ids and uids to get itself out of the loop.  
+* For a **SEND** message :  
+Id the node is node the targeted node, it forwards the message to the next one.
 
 
 
