@@ -60,7 +60,7 @@ public class Initializer implements peersim.core.Control {
 	first = (Noeud)Network.get(0).getProtocol(this.helloWorldPid);
 	first.setTransportLayer(0, 0);
 
-	System.out.println(ANSI_GREEN + "\nWe have the following nodes with their PID :"+ANSI_BLUE);
+	System.out.println(ANSI_GREEN + "\nWe have the following nodes with their UID :"+ANSI_BLUE);
 	//pour chaque noeud, on fait le lien entre la couche applicative et la couche transport
 	//puis on fait envoyer au noeud 0 un message "Hello"
 	for (int i = 1; i < nodeNb; i++) {
