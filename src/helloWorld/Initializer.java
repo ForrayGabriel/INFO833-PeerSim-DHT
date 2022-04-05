@@ -28,6 +28,7 @@ public class Initializer implements peersim.core.Control {
 	Node dest;
 
 	Random rand = new Random();
+	rand.setSeed(8465655);
 
 	//recuperation de la taille du reseau
 	nodeNb = Network.size();
@@ -43,7 +44,7 @@ public class Initializer implements peersim.core.Control {
 
 	//pour chaque noeud, on fait le lien entre la couche applicative et la couche transport
 	//puis on fait envoyer au noeud 0 un message "Hello"
-	for (int i = 1; i < 10; i++) {
+	for (int i = 1; i < nodeNb; i++) {
 	    dest = Network.get(i);
 	    current = (Noeud)dest.getProtocol(this.helloWorldPid);
 	    current.setTransportLayer(i, rand.nextInt(10000));
@@ -75,6 +76,8 @@ public class Initializer implements peersim.core.Control {
 	System.out.println(third);
 
 	EDSimulator.add(100, new Message(Message.ACTIVATE,"Hello"), Network.get(3),0);
+	EDSimulator.add(1000, new Message(Message.JOIN,"Hello"), Network.get(4),0);
+	EDSimulator.add(2000, new Message(Message.LEAVE,"Leave"), Network.get(1),0);
 
 	System.out.println("Initialization completed");
 	return false;

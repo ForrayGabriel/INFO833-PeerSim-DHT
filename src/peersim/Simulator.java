@@ -19,6 +19,7 @@
 package peersim;
 
 import java.io.*;
+import java.util.Random;
 
 import peersim.cdsim.*;
 import peersim.config.*;
@@ -174,11 +175,13 @@ public static void main(String[] args)
 			if( k>0 )
 			{
 				long seed = CommonState.r.nextLong();
-				CommonState.initializeRandom(seed);
+			
+				//CommonState.r.setSeed(84);
 			}
 			System.err.print("Simulator: starting experiment "+k);
 			System.err.println(" invoking "+simName[SIMID]);
-			System.err.println("Random seed: "+
+			CommonState.r.setSeed(8465655);
+			System.err.println("Random seed: " +
 				CommonState.r.getLastSeed());
 			System.out.println("\n\n");
 			

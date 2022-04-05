@@ -55,9 +55,9 @@ public class Noeud implements EDProtocol {
     //liaison entre un objet de la couche applicative et un 
     //objet de la couche transport situes sur le meme noeud
     public void setTransportLayer(int nodeId, int nodeUid) {
-	this.nodeId = nodeId;
-    this.nodeUid = nodeUid;
-	this.transport = (HWTransport) Network.get(this.nodeId).getProtocol(this.transportPid);
+        this.nodeId = nodeId;
+        this.nodeUid = nodeUid;
+        this.transport = (HWTransport) Network.get(this.nodeId).getProtocol(this.transportPid);
     }
 
     //envoi d'un message (l'envoi se fait via la couche transport)
@@ -109,7 +109,7 @@ public class Noeud implements EDProtocol {
         if (msg.getType() == Message.NEW_SUIV) {
             String[] content = msg.getContent().split(",");
             this.setSuiv(Integer.parseInt(content[1]), Integer.parseInt(content[2]));
-            this.send(new Message(Message.SHOW,"Show us"), Network.get(0));
+            this.send(new Message(Message.SHOW,"Show us the whole DHT"), Network.get(0));
         }
         if (msg.getType() == Message.SHOW) {
             if (this.suiv_id!=0) {
@@ -119,6 +119,11 @@ public class Noeud implements EDProtocol {
                 this.number++;
                 this.send(new Message(Message.ACTIVATE,"Hello"), Network.get(this.number));
             }
+        }
+        if (msg.getType() == Message.LEAVE){            
+            this.send(new Message(Message.NEW_SUIV,"I'm your new suiv,"+ this.suiv_id+","+this.suiv_uid), Network.get(this.prec_id));
+            this.send(new Message(Message.NEW_PREC,"I'm your new prec,"+ this.prec_id +","+this.prec_uid), Network.get(this.suiv_id));
+           
         }
     }
 
