@@ -49,7 +49,10 @@ The node finally have its place. It update its next and previous nodes ids and u
 The node update the info about its new neighbour.
 
 
-![Nodes DHT2](https://user-images.githubusercontent.com/72502592/161787740-5e6cbdce-d4ba-425f-8e0c-4de44fde426d.png)
+![Nodes DHT2](https://user-images.githubusercontent.com/72502592/161787969-5fbedc03-5d2b-42c0-83c7-60b415e65fff.png)
+
+
+
 
 
 
