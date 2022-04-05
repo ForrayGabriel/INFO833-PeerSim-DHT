@@ -55,6 +55,11 @@ The node send **NEW_SUIV** and a **NEW_PREC** message to its new neighbors with 
 Id the node is node the targeted node, it forwards the message to the next one.
 
 
+![Nodes DHT2](https://user-images.githubusercontent.com/72502592/161787969-5fbedc03-5d2b-42c0-83c7-60b415e65fff.png)
+
+
+
+
 
 
 
