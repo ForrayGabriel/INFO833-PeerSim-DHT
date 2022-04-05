@@ -31,8 +31,7 @@ When the simulator start, it uses the class Initializer to initialize the simula
 First it creates some nodes. The first one always has the **id 0** and the **uid 0**. The other ones have an id that is incremented, and an **uid that is a random number between 1 and 9 999.**  
 Then, we set the previous and next nodes attribut of the 3 firsts nodes as follow :  
 
-![NODE](/src/img/NodesDHT.png)
-
+![NODE](img\Nodes_DHT.png "node")
 
 Then, we add some message to send to some nodes at some time points.  
 
