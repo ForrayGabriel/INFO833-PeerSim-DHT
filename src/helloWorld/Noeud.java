@@ -139,8 +139,7 @@ public class Noeud implements EDProtocol {
         if (msg.getType() == Message.LEAVE){        
             System.out.println(ANSI_RED  + "I'm leaving");    
             this.send(new Message(Message.NEW_SUIV,"I'm your new suiv,"+ this.suiv_id+","+this.suiv_uid), Network.get(this.prec_id));
-            this.send(new Message(Message.NEW_PREC,"I'm your new prec,"+ this.prec_id +","+this.prec_uid), Network.get(this.suiv_id));
-           
+            this.send(new Message(Message.NEW_PREC,"I'm your new prec,"+ this.prec_id +","+this.prec_uid), Network.get(this.suiv_id)); 
         }
         if (msg.getType() == Message.SEND){
             String[] content = msg.getContent().split(",");
