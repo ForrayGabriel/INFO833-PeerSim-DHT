@@ -52,10 +52,14 @@ The node passes the message to the next one, unless it's 0. This is for showing 
 * For a **LEAVE** message :  
 The node send **NEW_SUIV** and a **NEW_PREC** message to its new neighbors with their ids and uids to get itself out of the loop.  
 * For a **SEND** message :  
-Id the node is node the targeted node, it forwards the message to the next one.
+Id the node is node the targeted node, it forwards the message to the next one.  
 
+When multiple nodes are created, we have a schema like this one :  
 
-![Nodes DHT2](https://user-images.githubusercontent.com/72502592/161787969-5fbedc03-5d2b-42c0-83c7-60b415e65fff.png)
+![Nodes DHT2](https://user-images.githubusercontent.com/72502592/161787969-5fbedc03-5d2b-42c0-83c7-60b415e65fff.png)  
+
+This DHT is capable of inserting new nodes where they belong, and get them out.  
+It can also transfert messages from a node to another.
 
 
 
